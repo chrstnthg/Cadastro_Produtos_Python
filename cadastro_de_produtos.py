@@ -37,18 +37,47 @@ def cadastrar_produto():
 
 def mostrar_produtos():
     criar_titulo("Lista de Produtos")
-    print(produtos)
+    i = 0
+    tamanho_vetor = len(produtos)
+    print(f"Total de Produtos cadastrados: {tamanho_vetor}")
+    while i < tamanho_vetor:
+        print(produtos[i])
+        i = i + 1
     print()
     voltar_ao_menu_principal()
 
+
+def tratar_erro():
+    input("Valor Inválido! Pressione Enter para voltar ao menu principal...")
+    main()
+
+
 def escolher_opcao():
-    opcao = int(input("\nEscolha uma opção (1 a 5): "))
 
-    if opcao == 1:
-        cadastrar_produto()
+    try:
+        opcao = int(input("\nEscolha uma opção (1 a 5): "))
 
-    elif opcao == 2:
-        mostrar_produtos()
+        if opcao == 1:
+            cadastrar_produto()
+
+        elif opcao == 2:
+            mostrar_produtos()
+
+        elif opcao == 3:
+            print("Você escolheu a opção 3")
+
+        elif opcao == 4:
+            print("Você escolheu a opção 4")
+
+        elif opcao ==5:
+           exit()
+
+        else:
+            tratar_erro()
+
+    except:
+        tratar_erro()
+
 
 
 
