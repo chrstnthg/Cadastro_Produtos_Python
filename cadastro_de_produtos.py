@@ -37,12 +37,13 @@ def cadastrar_produto():
 
 def mostrar_produtos():
     criar_titulo("Lista de Produtos")
-    i = 0
+
     tamanho_vetor = len(produtos)
+
     print(f"Total de Produtos cadastrados: {tamanho_vetor}")
-    while i < tamanho_vetor:
-        print(produtos[i])
-        i = i + 1
+    for produto in produtos:
+        print(produto)
+
     print()
     voltar_ao_menu_principal()
 
