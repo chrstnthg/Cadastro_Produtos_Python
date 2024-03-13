@@ -1,5 +1,25 @@
 import os
 
+produto = [{
+    "codigo": 100,
+    "nome": "Mouse",
+    "valor": 50.00,
+    "fabricante": "Razer"
+
+}, {
+    "codigo": 100,
+    "nome": "Teclado",
+    "valor": 120.00,
+    "fabricante": "Razer"
+
+}, {
+    "codigo": 100,
+    "nome": "Monitor LED 17",
+    "valor": 799.00,
+    "fabricante": "Razer"
+
+}]
+
 produtos = ["Mouse", "Teclado", "Monitor"]
 
 def criar_menu():
