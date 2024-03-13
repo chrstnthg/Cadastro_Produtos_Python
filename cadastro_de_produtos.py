@@ -1,6 +1,6 @@
 import os
 
-produtos = ["Mousse", "Teclado", "Monitor"]
+produtos = ["Mouse", "Teclado", "Monitor"]
 
 def criar_menu():
     os.system("cls")
@@ -52,7 +52,28 @@ def tratar_erro():
     input("Valor Inválido! Pressione Enter para voltar ao menu principal...")
     main()
 
+def tratar_erro_produto():
+    input("Valor Inválido! Pressione Enter e tente novamente...")
+    excluir_produto()
 
+def excluir_produto():
+    criar_titulo("Excluir Produto")
+
+    indice = int(input("Qual produto que será removido? "))
+    confirmacao = input(f"Você confirmação a exclusão do produto {produtos[indice]}(s/n)? ")
+
+    try:
+        if confirmacao == "s":
+            excluido = produtos.pop(indice)
+            print(f"O produto {excluido} foi excluido com sucesso!")
+            voltar_ao_menu_principal()
+        elif confirmacao == "n":
+            print("Operação de exclusão cancelada")
+            voltar_ao_menu_principal()
+        else:
+            tratar_erro_produto()
+    except:
+        tratar_erro_produto()
 def escolher_opcao():
 
     try:
@@ -68,7 +89,7 @@ def escolher_opcao():
             print("Você escolheu a opção 3")
 
         elif opcao == 4:
-            print("Você escolheu a opção 4")
+           excluir_produto()
 
         elif opcao ==5:
            exit()
