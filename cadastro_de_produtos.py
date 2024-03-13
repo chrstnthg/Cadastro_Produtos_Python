@@ -1,26 +1,26 @@
 import os
 
-produto = [{
+produtos = [{
     "codigo": 100,
     "nome": "Mouse",
     "valor": 50.00,
     "fabricante": "Razer"
 
 }, {
-    "codigo": 100,
+    "codigo": 200,
     "nome": "Teclado",
     "valor": 120.00,
     "fabricante": "Razer"
 
 }, {
-    "codigo": 100,
+    "codigo": 300,
     "nome": "Monitor LED 17",
     "valor": 799.00,
     "fabricante": "Razer"
 
 }]
 
-produtos = ["Mouse", "Teclado", "Monitor"]
+produt44s = ["Mouse", "Teclado", "Monitor"]
 
 def criar_menu():
     os.system("cls")
@@ -62,7 +62,13 @@ def mostrar_produtos():
 
     print(f"Total de Produtos cadastrados: {tamanho_vetor}")
     for produto in produtos:
-        print(produto)
+        print("Codigo                         Nome                          Valor")
+        codigo = produto["codigo"]
+        nome = produto["nome"]
+        valor = produto["valor"]
+        fabricante = produto["fabricante"]
+
+        print(f"{codigo:<30} {nome:<30}  R${valor:>6}  {fabricante:<30}")
 
     print()
     voltar_ao_menu_principal()
